@@ -11,12 +11,13 @@ class MostAffectedPanel extends StatelessWidget {
     return Container(
       child: ListView.builder(
         shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context,index){
         return Container(
           margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
           child: Row(
             children: <Widget>[
-              Image.network(countriesData[index]['countryInfo']['flag'],height: 30,),
+              Image.network(countriesData[index]['countryInfo']['flag'],height: 20,),
               SizedBox(width: 10,),
               Text(countriesData[index]['country'],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
               SizedBox(width: 10,),
