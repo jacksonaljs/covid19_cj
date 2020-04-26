@@ -26,8 +26,8 @@ body: SingleChildScrollView(child: Column(
       child: Text(DataSource.quote, style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold,fontSize: 25),),
     ),
     Padding(
-      padding: const EdgeInsets.symmetric(vertical:10.0),
-      child: Text('Worldwide',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+      padding: const EdgeInsets.symmetric(vertical:10.0,horizontal: 10),
+      child: Text('Worldwide',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
     ),
     WorldwidePanel()
   ],

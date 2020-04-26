@@ -9,10 +9,30 @@ class WorldwidePanel extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 2),
         children: <Widget>[
-          StatusPanel(),
-          StatusPanel(),
-          StatusPanel(),
-          StatusPanel(),
+          StatusPanel(
+            title: 'CONFIRMED',
+            panelColor: Colors.red[100],
+            textColor: Colors.red,
+            count: '123',
+          ),
+          StatusPanel(
+            title: 'ACTIVE',
+            panelColor: Colors.blue[100],
+            textColor: Colors.blue[900],
+            count: '123',
+          ),
+          StatusPanel(
+            title: 'RECOVERED',
+            panelColor: Colors.green[100],
+            textColor: Colors.green,
+            count: '123',
+          ),
+          StatusPanel(
+            title: 'DEATHS',
+            panelColor: Colors.grey[400],
+            textColor: Colors.red[900],
+            count: '123',
+          ),
         ],
       ),
     );
@@ -20,16 +40,25 @@ class WorldwidePanel extends StatelessWidget {
 }
 
 class StatusPanel extends StatelessWidget {
+
+  final Color panelColor;
+  final Color textColor;
+  final String title;
+  final String count;
+
+  const StatusPanel({Key key, this.panelColor, this.textColor, this.title, this.count}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: EdgeInsets.all(10),
       height: 80, width: width/2,
-      color: Colors.blue[100],
+      color: panelColor,
       child: Column(
-        children: <Widget>[Text('CONFIRMED',style: TextStyle(fontWeight:  FontWeight.bold,fontSize: 16),), Text('1234',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[Text(title,style: TextStyle(fontWeight:  FontWeight.bold,fontSize: 20,color: textColor),), Text(count,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: textColor),)],
       ),
     );
   }
