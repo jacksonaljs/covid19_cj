@@ -97,7 +97,10 @@ body: SingleChildScrollView(child: Column(
     Padding(
       padding: const EdgeInsets.symmetric(vertical:15.0,horizontal: 10),
       child: InfoPanel(),
-    )
+    ),
+    SizedBox(height: 30,),
+    Center(child: Text('"WE ARE TOGETHER IN THE FIGHT"',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
+    SizedBox(height: 50,)
 
   ],
 )),

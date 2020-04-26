@@ -1,5 +1,6 @@
 import 'package:covid19cj/datasource.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InfoPanel extends StatelessWidget {
   @override
@@ -9,12 +10,52 @@ class InfoPanel extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+            margin: EdgeInsets.symmetric(vertical: 5),
             color: primaryBlack,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('   FAQS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                Text('FAQS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
                 Icon(Icons.arrow_forward,color: Colors.white,)
               ],
+            ),
+          ),
+
+
+          GestureDetector(
+            onTap: (){
+              launch('https://pmnrf.gov.in/en/online-donation');
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+              margin: EdgeInsets.symmetric(vertical: 5),
+              color: primaryBlack,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text('DONATE TO PMNRF',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                  Icon(Icons.arrow_forward,color: Colors.white,)
+                ],
+              ),
+            ),
+          ),
+
+
+          GestureDetector(
+            onTap: (){
+              launch('https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters');
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+              margin: EdgeInsets.symmetric(vertical: 5),
+              color: primaryBlack,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+                children: <Widget>[
+                  Text('MYTH BUSTERS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                  Icon(Icons.arrow_forward,color: Colors.white,)
+                ],
+              ),
             ),
           )
         ],

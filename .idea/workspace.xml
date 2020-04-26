@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/homepage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/homepage.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/panels/infopanel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/panels/infopanel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/panels/mostaffectedcountries.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/panels/mostaffectedcountries.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
