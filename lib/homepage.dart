@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:covid19cj/datasource.dart';
+import 'package:covid19cj/panels/mostaffectedcountries.dart';
 import 'package:covid19cj/panels/worldwidepanel.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -20,9 +21,18 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  List countriesData;
+  fetchCountriesData()async{
+    http.Response response = await http.get('https://corona.lmao.ninja/v2/countries?sort=deaths');
+    setState(() {
+      countriesData = json.decode(response.body);
+    });
+  }
+
   @override
   void initState() {
     fetchWorldwideData();
+    fetchCountriesData();
     super.initState();
   }
 
@@ -45,9 +55,29 @@ body: SingleChildScrollView(child: Column(
     ),
     Padding(
       padding: const EdgeInsets.symmetric(vertical:10.0,horizontal: 10),
-      child: Text('Worldwide',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text('Worldwide',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+          Container(
+              decoration: BoxDecoration(
+                color: primaryBlack,
+                borderRadius: BorderRadius.circular(15)
+              ),
+              padding: EdgeInsets.all(10),
+              child: Text('Regional',style: TextStyle(fontSize: 20,color:Colors.white,fontWeight: FontWeight.bold),)),
+        ],
+      ),
     ),
-    worldData==null?CircularProgressIndicator():WorldwidePanel(worldData: worldData,)
+    worldData==null?CircularProgressIndicator():WorldwidePanel(worldData: worldData,),
+
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 20),
+      child: Text('Most Affected Countries',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+    ),
+    SizedBox(height:2,),
+    countriesData==null?Container():MostAffectedPanel(countriesData: countriesData,)
+
   ],
 )),
     );
