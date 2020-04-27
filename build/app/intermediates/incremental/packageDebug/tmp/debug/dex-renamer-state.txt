@@ -1,4 +1,4 @@
-#Mon Apr 27 05:22:56 IST 2020
+#Mon Apr 27 06:44:06 IST 2020
 base.0=/Users/jacksonchelote/Documents/GitHub/covid19_cj/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
