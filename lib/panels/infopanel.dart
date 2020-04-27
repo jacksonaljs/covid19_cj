@@ -1,4 +1,5 @@
 import 'package:covid19cj/datasource.dart';
+import 'package:covid19cj/pages/countryPage.dart';
 import 'package:covid19cj/pages/faqs.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -9,6 +10,25 @@ class InfoPanel extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
+
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>CountryPage()));
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+              margin: EdgeInsets.symmetric(vertical: 5),
+              color: primaryBlack,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text('COUNTRY WISE STATS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
+                  Icon(Icons.arrow_forward,color: Colors.white,)
+                ],
+              ),
+            ),
+          ),
+
           GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> FAQPage()));
@@ -20,7 +40,7 @@ class InfoPanel extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text('FAQS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                  Text('FAQS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
                   Icon(Icons.arrow_forward,color: Colors.white,)
                 ],
               ),
@@ -39,7 +59,7 @@ class InfoPanel extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text('DONATE TO PMNRF',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                  Text('DONATE TO PMNRF',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
                   Icon(Icons.arrow_forward,color: Colors.white,)
                 ],
               ),
@@ -58,12 +78,13 @@ class InfoPanel extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                 children: <Widget>[
-                  Text('MYTH BUSTERS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                  Text('MYTH BUSTERS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
                   Icon(Icons.arrow_forward,color: Colors.white,)
                 ],
               ),
             ),
-          )
+          ),
+
         ],
       ),
     );
@@ -83,7 +104,7 @@ class MostAffectedText extends StatelessWidget {
             color: primaryBlack,
             child: Row(
               children: <Widget>[
-                Text('Most Affected Countries',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                Text('Most Affected Countries',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
                 Icon(Icons.arrow_downward,color: Colors.white,)
               ],
             ),
@@ -106,7 +127,7 @@ class WorldwideText extends StatelessWidget {
             color: primaryBlack,
             child: Row(
               children: <Widget>[
-                Text('Worldwide Info',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 28),),
+                Text('Worldwide Info',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
                 Icon(Icons.arrow_downward,color: Colors.white,)
               ],
             ),
