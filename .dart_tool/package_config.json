@@ -56,6 +56,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "dynamic_theme",
+      "rootUri": "file:///Users/jacksonchelote/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/dynamic_theme-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.20"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/jacksonchelote/Developer/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -254,7 +260,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-04-27T00:26:15.142376Z",
+  "generated": "2020-04-27T12:13:49.818212Z",
   "generator": "pub",
   "generatorVersion": "2.7.2"
 }
